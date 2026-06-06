@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Nanny</title>
+  <style>
+    :root {
+      --blue: #174ea6;
+      --blue-dark: #113d88;
+      --navy: #101a2f;
+      --muted: #5a6475;
+      --line: #e6ebf3;
+      --pale: #f5f8fc;
+      --mockup: url("../Nanny_landing_final_mockup.png");
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--navy);
+      background: #ffffff;
+      font-size: 14px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 100%;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 26%, rgba(224, 233, 247, 0.62), transparent 24%),
+        radial-gradient(circle at 87% 61%, rgba(223, 235, 246, 0.54), transparent 22%),
+        #fff;
+    }
+
+    .container {
+      width: min(100% - 128px, 736px);
+      margin: 0 auto;
+    }
+
+    .site-header {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .nav-wrap {
+      width: min(100% - 58px, 806px);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 150px;
+    }
+
+    .brand-mark,
+    .footer-mark {
+      width: 31px;
+      height: 31px;
+      color: var(--blue);
+    }
+
+    .brand-title {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .main-nav a {
+      padding: 24px 0 20px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .main-nav a:first-child {
+      color: var(--blue);
+      border-bottom-color: var(--blue);
+    }
+
+    .whatsapp-top,
+    .primary-btn,
+    .ghost-btn,
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 8px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .whatsapp-top {
+      min-width: 99px;
+      height: 33px;
+      padding: 0 16px;
+      background: #176bd8;
+      color: white;
+      font-size: 11px;
+      box-shadow: 0 8px 20px rgba(23, 78, 166, 0.25);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 332px;
+    }
+
+    .hero-photo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: calc((100vw - min(100vw - 128px, 736px)) / 2 + 377px);
+      max-width: 446px;
+      height: 320px;
+      background-image: var(--mockup);
+      background-repeat: no-repeat;
+      background-size: 864px 1821px;
+      background-position: -419px -62px;
+      z-index: 0;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      padding-top: 33px;
+    }
+
+    .hero-copy {
+      width: 344px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 31px;
+      line-height: 1.15;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    .blue-line {
+      display: block;
+      color: var(--blue);
+    }
+
+    .hero-copy p {
+      margin: 17px 0 24px;
+      width: 295px;
+      font-size: 13px;
+      line-height: 1.52;
+      color: #172033;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      width: 335px;
+      margin-bottom: 25px;
+    }
+
+    .stat {
+      display: grid;
+      gap: 5px;
+      align-content: start;
+      font-size: 9px;
+      line-height: 1.25;
+    }
+
+    .stat strong {
+      font-size: 10px;
+      line-height: 1;
+    }
+
+    .icon {
+      width: 26px;
+      height: 26px;
+      color: var(--blue);
+      stroke-width: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .primary-btn {
+      height: 35px;
+      padding: 0 17px;
+      background: var(--blue);
+      color: white;
+      border: 0;
+      font-size: 11px;
+      box-shadow: 0 9px 18px rgba(23, 78, 166, 0.24);
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .section {
+      padding: 0;
+    }
+
+    .who {
+      min-height: 203px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      align-items: start;
+      gap: 50px;
+      padding-top: 16px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--blue);
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.17;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    .who p,
+    .about-text p,
+    .contact-text p {
+      color: #1f2937;
+      line-height: 1.55;
+    }
+
+    .who p {
+      margin: 16px 0 0;
+      width: 258px;
+      font-size: 13px;
+    }
+
+    .image-crop {
+      background-image: var(--mockup);
+      background-repeat: no-repeat;
+      background-size: 864px 1821px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .kids-photo {
+      width: 427px;
+      height: 176px;
+      background-position: -375px -407px;
+    }
+
+    .care-panel {
+      margin-top: 0;
+      padding: 11px 18px 22px;
+      background: rgba(255, 255, 255, 0.72);
+      border-radius: 9px;
+      box-shadow: 0 18px 45px rgba(36, 65, 105, 0.05);
+    }
+
+    .center-title {
+      text-align: center;
+    }
+
+    .center-title h2 {
+      margin-top: 7px;
+    }
+
+    .services-grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .service-item {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 15px;
+      align-items: start;
+    }
+
+    .round-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #eef3fa;
+      color: var(--blue);
+    }
+
+    .round-icon svg {
+      width: 30px;
+      height: 30px;
+      stroke-width: 1.8;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 13px;
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    .service-item p,
+    .reason p,
+    .step p {
+      margin: 0;
+      color: #1f2937;
+      line-height: 1.5;
+      font-size: 12px;
+    }
+
+    .about {
+      padding-top: 9px;
+      display: grid;
+      grid-template-columns: 325px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nanny-photo {
+      width: 325px;
+      height: 171px;
+      background-position: -63px -765px;
+    }
+
+    .about-text {
+      padding-left: 1px;
+    }
+
+    .about-text h2 {
+      font-size: 21px;
+    }
+
+    .about-text p {
+      margin: 14px 0 20px;
+      font-size: 12px;
+      max-width: 380px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 106px 84px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .availability-card {
+      margin-top: 20px;
+      min-height: 93px;
+      display: grid;
+      grid-template-columns: 110px 1fr 168px;
+      align-items: center;
+      padding: 0 48px;
+      background: #f4f8fe;
+      border-radius: 10px;
+    }
+
+    .calendar-badge {
+      width: 67px;
+      height: 67px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #bdd2f5;
+      border-radius: 50%;
+      color: var(--blue);
+    }
+
+    .availability-card h2 {
+      color: #163d87;
+      font-size: 18px;
+    }
+
+    .availability-card p {
+      margin: 8px 0 12px;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .availability-meta {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .ghost-btn {
+      height: 34px;
+      border: 1px solid #8db2ec;
+      background: transparent;
+      color: var(--blue);
+      font-size: 11px;
+    }
+
+    .schedule-section {
+      padding-top: 18px;
+    }
+
+    .schedule-section h2 {
+      margin-bottom: 13px;
+    }
+
+    .schedule-layout {
+      display: grid;
+      grid-template-columns: 388px 1fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    table {
+      width: 388px;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.86);
+    }
+
+    th,
+    td {
+      padding: 8px 14px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      font-weight: 500;
+    }
+
+    th {
+      color: #263147;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    th:not(:first-child),
+    td:not(:first-child) {
+      text-align: center;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: 0;
+    }
+
+    .table-note {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 10px 0 0 14px;
+      color: #263147;
+      font-size: 11px;
+    }
+
+    .map-card {
+      position: relative;
+      min-height: 155px;
+      padding: 32px 0 0 20px;
+    }
+
+    .map-bg {
+      position: absolute;
+      inset: 0 0 0 72px;
+      width: 244px;
+      height: 151px;
+      background-position: -559px -1113px;
+      opacity: 0.78;
+      z-index: 0;
+    }
+
+    .map-card > *:not(.map-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
+    .map-card .icon {
+      width: 33px;
+      height: 33px;
+      margin-bottom: 16px;
+    }
+
+    .map-card p {
+      margin: 0 0 5px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #4b5563;
+    }
+
+    .map-card h2 {
+      width: 190px;
+      font-size: 21px;
+    }
+
+    .map-card small {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #313a4c;
+    }
+
+    .reasons {
+      margin-top: 31px;
+      padding: 16px 0 25px;
+      background: rgba(247, 250, 254, 0.78);
+    }
+
+    .reasons .container {
+      width: min(100% - 112px, 760px);
+    }
+
+    .reasons-grid {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+    }
+
+    .reason {
+      display: grid;
+      grid-template-columns: 31px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .reason h3,
+    .step h3 {
+      font-size: 12px;
+      margin-bottom: 7px;
+    }
+
+    .how {
+      padding: 20px 0 21px;
+    }
+
+    .steps {
+      margin-top: 21px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 52px;
+      position: relative;
+    }
+
+    .step {
+      position: relative;
+    }
+
+    .step::after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      right: -37px;
+      width: 24px;
+      height: 1px;
+      background: #cdd9ea;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      top: 26px;
+      right: -38px;
+      width: 8px;
+      height: 8px;
+      border-top: 1px solid #cdd9ea;
+      border-right: 1px solid #cdd9ea;
+      transform: rotate(45deg);
+    }
+
+    .step:last-child::before,
+    .step:last-child::after {
+      display: none;
+    }
+
+    .step-num {
+      width: 27px;
+      height: 27px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: white;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .cta {
+      display: grid;
+      grid-template-columns: 90px 1fr 245px;
+      align-items: center;
+      min-height: 83px;
+      padding: 0 57px;
+      border-radius: 5px;
+      background: linear-gradient(100deg, #123f94, #184fb2);
+      color: white;
+    }
+
+    .cta svg {
+      width: 44px;
+      height: 44px;
+      stroke-width: 1.5;
+    }
+
+    .cta h2 {
+      font-size: 22px;
+      color: white;
+    }
+
+    .cta p {
+      margin: 7px 0 0;
+      font-size: 13px;
+    }
+
+    .cta-button {
+      height: 37px;
+      background: white;
+      color: #172033;
+      font-size: 12px;
+    }
+
+    .cta small {
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      color: #b8c8e6;
+      font-size: 9px;
+    }
+
+    .contact {
+      padding: 20px 0 21px;
+      display: grid;
+      grid-template-columns: 1fr repeat(3, 150px);
+      gap: 12px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      margin-top: 3px;
+      font-size: 20px;
+    }
+
+    .contact-text p {
+      margin: 13px 0 0;
+      font-size: 11px;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding-top: 16px;
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 12px;
+    }
+
+    .contact-item svg {
+      color: var(--blue);
+    }
+
+    .contact-item:first-of-type svg {
+      color: #11a64a;
+    }
+
+    .site-footer {
+      background: linear-gradient(90deg, #0d1b31, #102947);
+      color: white;
+    }
+
+    .footer-inner {
+      width: min(100% - 128px, 736px);
+      height: 52px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 175px 1fr 100px 100px;
+      align-items: center;
+      gap: 20px;
+      font-size: 10px;
+      color: #b7c2d3;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+    }
+
+    .footer-mark {
+      color: white;
+    }
+
+    .footer-brand span {
+      display: block;
+      font-weight: 800;
+      font-size: 13px;
+      color: white;
+    }
+
+    .footer-brand small {
+      display: block;
+      margin-top: 2px;
+      font-size: 8px;
+      color: #d4dbe6;
+    }
+
+    .whatsapp-icon {
+      width: 15px;
+      height: 15px;
+      color: #16a34a;
+    }
+
+    @media (max-width: 760px) {
+      .container,
+      .footer-inner,
+      .reasons .container {
+        width: min(100% - 32px, 736px);
+      }
+
+      .site-header {
+        height: auto;
+      }
+
+      .nav-wrap {
+        width: min(100% - 32px, 806px);
+        padding: 18px 0;
+        flex-wrap: wrap;
+      }
+
+      .main-nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        gap: 20px;
+      }
+
+      .hero {
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero-photo {
+        position: relative;
+        order: 2;
+        top: auto;
+        right: auto;
+        width: 100%;
+        max-width: none;
+        height: 260px;
+        margin-top: 22px;
+        background-position: -432px -90px;
+        border-radius: 8px;
+      }
+
+      .hero .container {
+        order: 1;
+        padding-top: 24px;
+      }
+
+      .hero-copy,
+      .hero-copy p,
+      .stats-row,
+      .kids-photo,
+      .nanny-photo,
+      table {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .stats-row,
+      .services-grid,
+      .about-stats,
+      .reasons-grid,
+      .steps,
+      .contact {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .who,
+      .about,
+      .schedule-layout,
+      .availability-card,
+      .cta,
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .who,
+      .about,
+      .schedule-layout {
+        gap: 22px;
+      }
+
+      .kids-photo {
+        height: 176px;
+      }
+
+      .availability-card,
+      .cta {
+        gap: 18px;
+        padding: 24px;
+      }
+
+      .availability-meta {
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .map-card {
+        padding-left: 0;
+      }
+
+      .step::before,
+      .step::after {
+        display: none;
+      }
+
+      .footer-inner {
+        height: auto;
+        padding: 18px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .stats-row,
+      .services-grid,
+      .about-stats,
+      .reasons-grid,
+      .steps,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .service-item {
+        grid-template-columns: 56px 1fr;
+      }
+
+      .hero-actions {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .whatsapp-top {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="#">
+          <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M9.8 15.2c-3.3.8-5.7 3.9-5.7 7.4v3.1h10.3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22.2 15.2c3.3.8 5.7 3.9 5.7 7.4v3.1H17.6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 20.7l-3.1-3.3a3.1 3.1 0 0 1 4.4-4.4l.7.7.7-.7a3.1 3.1 0 0 1 4.4 4.4L16 24.8l-5.4-5.7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9.5" cy="8.4" r="3.1" stroke="currentColor"/>
+          </svg>
+          <span>
+            <span class="brand-title">Your Nanny</span>
+            <span class="brand-subtitle">Care, Play, Grow</span>
+          </span>
+        </a>
+        <nav class="main-nav" aria-label="Primary navigation">
+          <a href="#">Home</a>
+          <a href="#about">About Me</a>
+          <a href="#services">Services</a>
+          <a href="#availability">Availability</a>
+          <a href="#how">How It Works</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a class="whatsapp-top" href="#">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M8.6 10.1c.3 2 1.9 3.9 3.9 5 .6.4 1.5.8 2.1.5.5-.2.8-1.2 1.2-1.6.2-.2.4-.3.7-.2l2.2 1c.3.1.5.4.4.7-.2 1-.8 2.2-1.7 2.7-1.7 1-4.6 0-7.2-2.1-2.7-2.2-4.5-5.3-4.1-7.4.2-.9 1.2-1.7 2-2 .3-.1.6 0 .8.3l1.2 2c.2.3.1.6-.1.8-.4.5-1.4.9-1.4 1.3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M4.3 20.2l1.1-3A8.8 8.8 0 1 1 8 19.7l-3.7.5z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-photo" aria-hidden="true"></div>
+        <div class="container">
+          <div class="hero-copy">
+            <h1>Reliable childcare <span class="blue-line">so you can focus</span><span class="blue-line">on what matters.</span></h1>
+            <p>Warm, experienced and trustworthy care for children aged 3 to 10 in your home.</p>
+            <div class="stats-row">
+              <div class="stat">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.4-2.8 7.7-7 9-4.2-1.3-7-4.6-7-9V6l7-3z" stroke="currentColor"/><path d="M9 12l2 2 4-5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <strong>5 years</strong><span>of experience</span>
+              </div>
+              <div class="stat">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor"/><circle cx="16" cy="8" r="3" stroke="currentColor"/><path d="M3 20c.6-3 2.3-4.5 5-4.5s4.4 1.5 5 4.5M11 17c.9-1 2.1-1.5 3.8-1.5 2.6 0 4.2 1.5 4.8 4.5" stroke="currentColor" stroke-linecap="round"/></svg>
+                <strong>Ages</strong><span>3-10</span>
+              </div>
+              <div class="stat">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="11" height="9" rx="2" stroke="currentColor"/><rect x="9" y="9" width="11" height="9" rx="2" stroke="currentColor"/></svg>
+                <strong>English</strong><span>Ukrainian, Russian</span>
+              </div>
+              <div class="stat">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11z" stroke="currentColor"/><circle cx="12" cy="10" r="2.2" stroke="currentColor"/></svg>
+                <strong>Clane, Maynooth,</strong><span>Celbridge</span>
+              </div>
+            </div>
+            <div class="hero-actions">
+              <a class="primary-btn" href="#">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.3 20.2l1.1-3A8.8 8.8 0 1 1 8 19.7l-3.7.5z" stroke="currentColor" stroke-width="1.7"/><path d="M8.7 9.1c.9 3.6 3 5.7 6.4 6.4l1.4-1.4 2.3 1c-.2 1.8-1.3 2.7-3.1 2.7-4.9-.3-9.2-4.6-9.5-9.5 0-1.8.9-2.9 2.7-3.1l1 2.3-1.2 1.6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                Message me on WhatsApp
+              </a>
+              <a class="link-btn" href="#availability">View availability <span>›</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container who">
+          <div>
+            <p class="eyebrow">Who I Help</p>
+            <h2>Support for busy,<br>working families.</h2>
+            <p>I provide dependable childcare during work hours so you can have peace of mind knowing your children are in safe hands.</p>
+          </div>
+          <div class="image-crop kids-photo" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="container care-panel" id="services">
+        <div class="center-title">
+          <p class="eyebrow">How I Can Help</p>
+          <h2>Care that fits your family’s needs.</h2>
+        </div>
+        <div class="services-grid">
+          <article class="service-item">
+            <span class="round-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10v10h14V10" stroke="currentColor"/><path d="M10 20v-6h4v6" stroke="currentColor"/></svg></span>
+            <div><h3>In-Home Care</h3><p>I come to your home and care for your children in their familiar environment.</p></div>
+          </article>
+          <article class="service-item">
+            <span class="round-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 11h14l-1.4 7H6.4L5 11z" stroke="currentColor" stroke-linejoin="round"/><path d="M8 11c0-2.4 1.5-4 4-4s4 1.6 4 4M9 7L7 4M15 7l2-3" stroke="currentColor" stroke-linecap="round"/></svg></span>
+            <div><h3>Feeding &amp; Meals</h3><p>I prepare and serve meals and snacks according to your preferences.</p></div>
+          </article>
+          <article class="service-item">
+            <span class="round-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="6" height="6" rx="1" stroke="currentColor"/><rect x="14" y="4" width="6" height="6" rx="1" stroke="currentColor"/><rect x="4" y="14" width="6" height="6" rx="1" stroke="currentColor"/><rect x="14" y="14" width="6" height="6" rx="1" stroke="currentColor"/><path d="M7 7h.1M17 7h.1M7 17h.1M17 17h.1" stroke="currentColor" stroke-linecap="round"/></svg></span>
+            <div><h3>Play &amp; Activities</h3><p>Engaging in age-appropriate games, reading, creativity and outdoor play.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container about" id="about">
+        <div class="image-crop nanny-photo" aria-hidden="true"></div>
+        <div class="about-text">
+          <p class="eyebrow">About Me</p>
+          <h2>Hi, I’m here to help your family.</h2>
+          <p>I have 5 years of experience working as a nanny with children aged 3 to 10. I’m responsible, patient and caring. I speak English, Ukrainian and Russian. Your children’s safety, well-being and happiness are my priority.</p>
+          <div class="about-stats">
+            <div class="stat"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.4-2.8 7.7-7 9-4.2-1.3-7-4.6-7-9V6l7-3z" stroke="currentColor"/><path d="M9 12l2 2 4-5" stroke="currentColor" stroke-linecap="round"/></svg><strong>5 years</strong><span>of experience</span></div>
+            <div class="stat"><svg class="icon" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="currentColor"/><circle cx="16" cy="8" r="3" stroke="currentColor"/><path d="M3 20c.6-3 2.3-4.5 5-4.5s4.4 1.5 5 4.5M11 17c.9-1 2.1-1.5 3.8-1.5 2.6 0 4.2 1.5 4.8 4.5" stroke="currentColor" stroke-linecap="round"/></svg><strong>Ages</strong><span>3-10</span></div>
+            <div class="stat"><svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="11" height="9" rx="2" stroke="currentColor"/><rect x="9" y="9" width="11" height="9" rx="2" stroke="currentColor"/></svg><strong>Languages</strong><span>EN, UK, RU</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container availability-card" id="availability">
+        <div class="calendar-badge">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 3v4M16 3v4M4 10h16M8 14h2M12 14h2M16 14h.1M8 17h2M12 17h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <h2>Availability Snapshot</h2>
+          <p>Weekdays • Monday to Friday</p>
+          <div class="availability-meta"><span>Daytime hours</span><span>⌖ Clane, Maynooth, Celbridge</span></div>
+        </div>
+        <a class="ghost-btn" href="#">See full schedule</a>
+      </section>
+
+      <section class="container schedule-section">
+        <p class="eyebrow">Schedule &amp; Location</p>
+        <h2>When and where I’m available.</h2>
+        <div class="schedule-layout">
+          <div>
+            <table aria-label="Availability schedule">
+              <thead>
+                <tr><th>Day</th><th>Morning</th><th>Afternoon</th><th>Evening</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Monday</td><td>8:00 – 13:00</td><td>13:00 – 18:00</td><td>–</td></tr>
+                <tr><td>Tuesday</td><td>8:00 – 13:00</td><td>13:00 – 18:00</td><td>–</td></tr>
+                <tr><td>Wednesday</td><td>8:00 – 13:00</td><td>13:00 – 18:00</td><td>–</td></tr>
+                <tr><td>Thursday</td><td>8:00 – 13:00</td><td>13:00 – 18:00</td><td>–</td></tr>
+                <tr><td>Friday</td><td>8:00 – 13:00</td><td>13:00 – 18:00</td><td>–</td></tr>
+              </tbody>
+            </table>
+            <div class="table-note">ⓘ Schedule may vary. Please get in touch to confirm.</div>
+          </div>
+          <div class="map-card">
+            <div class="image-crop map-bg" aria-hidden="true"></div>
+            <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11z" stroke="currentColor"/><circle cx="12" cy="10" r="2.2" stroke="currentColor"/></svg>
+            <p>Service Area</p>
+            <h2>Clane, Maynooth, Celbridge</h2>
+            <small>Co. Kildare, Ireland</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="reasons">
+        <div class="container">
+          <div class="center-title">
+            <p class="eyebrow">Why Parents Choose Me</p>
+            <h2>Trusted care. Happy children. Peace of mind.</h2>
+          </div>
+          <div class="reasons-grid">
+            <article class="reason"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.4-2.8 7.7-7 9-4.2-1.3-7-4.6-7-9V6l7-3z" stroke="currentColor"/><path d="M9 12l2 2 4-5" stroke="currentColor" stroke-linecap="round"/></svg><div><h3>Safe &amp; Reliable</h3><p>Your children are in responsible and trustworthy hands.</p></div></article>
+            <article class="reason"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 21C8 17.5 5 14.8 5 10.8A4 4 0 0 1 12 8a4 4 0 0 1 7 2.8c0 4-3 6.7-7 10.2z" stroke="currentColor" stroke-linejoin="round"/></svg><div><h3>Personal Attention</h3><p>I focus on each child’s needs and follow your family’s routines.</p></div></article>
+            <article class="reason"><svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor"/><path d="M8 18l-2 3M9 12h.1M12 12h.1M15 12h.1" stroke="currentColor" stroke-linecap="round"/></svg><div><h3>Clear Communication</h3><p>Regular updates and open communication with parents.</p></div></article>
+            <article class="reason"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8L6.8 19l1-5.8-4.2-4.1 5.8-.8L12 3z" stroke="currentColor" stroke-linejoin="round"/></svg><div><h3>Fun &amp; Engaging</h3><p>I create a positive, joyful and supportive environment.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="container how" id="how">
+        <div class="center-title">
+          <p class="eyebrow">How It Works</p>
+          <h2>Simple steps to get started.</h2>
+        </div>
+        <div class="steps">
+          <article class="step"><span class="step-num">1</span><h3>Get in touch</h3><p>Message me on WhatsApp or email with basic information.</p></article>
+          <article class="step"><span class="step-num">2</span><h3>Let’s connect</h3><p>We’ll discuss your needs, schedule and answer any questions.</p></article>
+          <article class="step"><span class="step-num">3</span><h3>Meet (optional)</h3><p>We can meet in person so you and your child feel comfortable.</p></article>
+          <article class="step"><span class="step-num">4</span><h3>Care begins</h3><p>I start caring for your children in your home as agreed.</p></article>
+        </div>
+      </section>
+
+      <section class="container cta">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21C7 16.7 4 13.9 4 9.8A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8 2.8c0 4.1-3 6.9-8 11.2z" stroke="currentColor" stroke-linejoin="round"/></svg>
+        <div>
+          <h2>Ready to get started?</h2>
+          <p>I’d love to support your family.</p>
+        </div>
+        <div>
+          <a class="cta-button" href="#"><svg class="whatsapp-icon" viewBox="0 0 24 24" fill="none"><path d="M4.3 20.2l1.1-3A8.8 8.8 0 1 1 8 19.7l-3.7.5z" stroke="currentColor" stroke-width="1.8"/><path d="M8.7 9.1c.9 3.6 3 5.7 6.4 6.4l1.4-1.4 2.3 1c-.2 1.8-1.3 2.7-3.1 2.7-4.9-.3-9.2-4.6-9.5-9.5 0-1.8.9-2.9 2.7-3.1l1 2.3-1.2 1.6z" stroke="currentColor" stroke-width="1.5"/></svg>Message me on WhatsApp</a>
+          <small>or email me directly</small>
+        </div>
+      </section>
+
+      <section class="container contact" id="contact">
+        <div class="contact-text">
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s talk.</h2>
+          <p>Feel free to reach out with any questions.</p>
+        </div>
+        <div class="contact-item"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4.3 20.2l1.1-3A8.8 8.8 0 1 1 8 19.7l-3.7.5z" stroke="currentColor" stroke-width="1.7"/><path d="M8.7 9.1c.9 3.6 3 5.7 6.4 6.4l1.4-1.4 2.3 1c-.2 1.8-1.3 2.7-3.1 2.7-4.9-.3-9.2-4.6-9.5-9.5 0-1.8.9-2.9 2.7-3.1l1 2.3-1.2 1.6z" stroke="currentColor" stroke-width="1.5"/></svg><span><strong>WhatsApp</strong>+353 89 123 4567</span></div>
+        <div class="contact-item"><svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="1.5" stroke="currentColor"/><path d="M5 7l7 6 7-6" stroke="currentColor" stroke-linejoin="round"/></svg><span><strong>Email</strong>hello@yournanny.ie</span></div>
+        <div class="contact-item"><svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11z" stroke="currentColor"/><circle cx="12" cy="10" r="2.2" stroke="currentColor"/></svg><span><strong>Location</strong>Clane, Maynooth,<br>Celbridge, Co. Kildare</span></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <svg class="footer-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M9.8 15.2c-3.3.8-5.7 3.9-5.7 7.4v3.1h10.3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22.2 15.2c3.3.8 5.7 3.9 5.7 7.4v3.1H17.6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 20.7l-3.1-3.3a3.1 3.1 0 0 1 4.4-4.4l.7.7.7-.7a3.1 3.1 0 0 1 4.4 4.4L16 24.8l-5.4-5.7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9.5" cy="8.4" r="3.1" stroke="currentColor"/>
+          </svg>
+          <span>Your Nanny<small>Care, Play, Grow</small></span>
+        </div>
+        <div>© 2025 Your Nanny. All rights reserved.</div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
